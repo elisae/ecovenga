@@ -1,0 +1,16 @@
+  <div>
+    <form ng-submit="$ctrl.submit()">
+      <label>Name: (required)<input type="text" ng-model="$ctrl.event.name" required placeholder="Enter a event name..."/></label><br />
+      <label>Notes: <textarea rows="5" ng-model="$ctrl.event.notes" placeholder="Space for some notes..."></textarea></label><br />
+      <label>Date: (required)<input type="date" ng-model="$ctrl.event.date" required /></label><br />
+      <label>Time: (required)<input type="time" ng-model="$ctrl.event.date" required /></label><br />
+
+      <div class="btn-wrapper">
+        <a href="#!events">
+          <button class="button addItemBtn"><i class="fi-x icon-padding"></i>Cancel</button>
+        </a>
+        <button type="submit" class="button addItemBtn"><i class="fi-check icon-padding"></i>Save</button>
+      </div>
+
+    </form>
+  </div>

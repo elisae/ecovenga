@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log
+dev/
+initial_data/
+test/
+notes
+gulpfile.js

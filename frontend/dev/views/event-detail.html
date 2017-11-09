@@ -1,0 +1,129 @@
+<h2>Event "{{event.name}}"</h2>
+<p ng-if="event.notes" class="eventNotes">{{event.notes}}</p>
+<p>Date: {{event.date | date : "dd/MM/yyyy 'at' H:mm a"}}</p>
+
+<div ng-if="$ctrl.partOfMyEvents" class="toggleVisibilty">
+  <ul class="event-metadata">
+    <p>The following people accepted the invitation of {{ event.creator.name }}</p>
+    <li ng-repeat="participator in event.participants">
+      <span ng-if="(participator.name == event.creator.name) && ($ctrl.user == event.creator._id)">
+        <!-- Veranstalter und Teilnehmer und eingeloggter User -->
+        <i class="fi-torso icon-padding"></i>{{participator.name}}<button class="revoke button" ng-click="$ctrl.deleteEvent()"><i class="fi-x icon-stand-alone"></i>Revoke</button>
+      </span>
+      <span ng-if="(participator.name == event.creator.name) && ($ctrl.user != event.creator._id)">
+        <!-- Veranstalter und Teilnehmer aber nicht der derzeit eingeloggte User -->
+        <i class="fi-torso icon-padding"></i>{{participator.name}}
+      </span>
+      <span ng-if="(participator.name != event.creator.name) && ($ctrl.user == participator._id)">
+        <!-- nur Teilnehmer und eingeloggter User -->
+        <i class="fi-torso icon-padding"></i>{{participator.name}}<button class="revoke button" ng-click="$ctrl.deleteMeAsParticipator()"><i class="fi-x icon-stand-alone"></i>Revoke</button>
+      </span>
+      <span ng-if="(participator.name != event.creator.name) && ($ctrl.user != participator._id)">
+        <!-- nur Teilnehmer -->
+        <i class="fi-torso icon-padding"></i>{{participator.name}}
+      </span>
+    </li>
+  </ul>
+  <div class="detail-list-header">
+    <span>Things to bring</span>
+    <div class="header-wrapper">
+      <span class="cost">Cost</span>
+      <span class="responsible">Responsible</span>
+    </div>
+  </div>
+  <ul class="event-detail-list">
+    <li ng-repeat="item in event.items">
+
+        <!-- ************* LABEL start  -->
+        <span class="item-wrapper">
+          <!-- only if item has a label (i.e., not being created atm) -->
+          <span ng-if="item.label" class="item-label">
+            <!-- Only the event creator is allowed to delete an item -->
+            <span ng-if="($ctrl.user == event.creator._id)">
+              <button class="button delete" ng-click="$ctrl.deleteItem(item._id); $ctrl.update();"><i class="fi-trash icon-stand-alone"></i></button>
+            </span>
+            <span class="item">{{ item.label }}</span>
+          </span>
+          <span ng-if="!item.label" class="input-wrapper">
+            <span class="item"><input type="text" ng-model="$ctrl.new_label" placeholder="Label..."/></span>
+            <button class="button checkBtn" ng-click="$ctrl.createItem()"><i class="fi-check icon-stand-alone"></i></button>
+          </span>
+        </span>
+        <!-- LABEL end ************* -->
+
+        <div class="li-wrapper">
+
+          <!-- ************* COST start  -->
+          <!-- item has a cost to display -->
+          <span>Cost:</span>
+          <span ng-if="item.cost">
+            <span class="cost_label">
+              <!-- only event creator or item-responsible person can edit cost -->
+              <span ng-if="($ctrl.user == item.assigned_to._id) || ($ctrl.user == event.creator._id)">
+                <button class="button delete" ng-click="$ctrl.deleteCost(item._id); $ctrl.update();"><i class="fi-trash icon-stand-alone"></i></button>
+              </span>
+            <span class="expenses">{{ item.cost }} €</span>
+            </span>
+          </span>
+
+          <!-- item has no cost to display -->
+          <span ng-if="!item.cost" class="expenses-input cost">
+            <!-- only event-creator or, if item is assigned, item-responsible person can edit cost -->
+            <span class="cost-input-wrapper" ng-if="($ctrl.user == event.creator._id) || (item.assigned_to && ($ctrl.user == item.assigned_to._id))">
+              <span class="expenses-wrapper"><input type="text" ng-model="$ctrl.new_cost" placeholder="Cost..."/></span>
+              <button class="button checkBtn" ng-click="$ctrl.addCost(item); $ctrl.update();"><i class="fi-check icon-stand-alone"></i></button>
+            </span>
+          </span>
+          <!-- COST end ************* -->
+
+          <!-- ************* RESPONSIBILITY start -->
+          <!-- only if item is assigned -->
+          <span>By:</span>
+          <span ng-if="item.assigned_to">
+            <span class="assigned_to_wrapper">
+              <!-- only event creator or item-resposible person can delete responsibility -->
+              <span ng-if="($ctrl.user == item.assigned_to._id) || ($ctrl.user == event.creator._id)">
+                <button class="button" ng-click="$ctrl.deleteResponsibility(item._id); $ctrl.update();"><i class="fi-trash icon-stand-alone"></i></button>
+              </span>
+              <span class="responsible">{{ item.assigned_to.name }}</span>
+            </span>
+          </span>
+
+          <!-- only if item is unassigned one can take responsibility -->
+          <span ng-if="!item.assigned_to" class="assigned_to_wrapper">
+            <button class="button" ng-click="$ctrl.makeMeResponsible(item._id); $ctrl.update();"><i class="fi-torso icon-padding"></i>I do it</button>
+          </span>
+          <!-- RESPONSIBILITY end ************* -->
+        </div>
+
+      </li>
+  </ul>
+
+  <div class="btn-wrapper">
+    <button class="button addItemBtn" id="button" ng-click="$ctrl.editEvent()"><i class="fi-pencil icon-padding"></i>Edit</button>
+    <button class="button addItemBtn" ng-click="$ctrl.addSomething()"><i class="fi-plus icon-padding"></i>Add Item</button>
+  </div>
+
+  <div class="detail-list-header">
+    <span>Debts</span>
+  </div>
+
+  <ul class="event-detail-list debt-list">
+    <span>Total cost: {{ result.total }} €</span></br>
+    <span ng-if="!result.even">
+      Watch out, amount is not evenly divisible:
+      {{ result.leftover.user.name }} pays {{ result.leftover.amount }} €
+      <span ng-if="result.leftover.type == 'giver'">more.</span>
+      <span ng-if="result.leftover.type == 'receiver'">less.</span>
+    </span>
+    <li ng-repeat="debt in result.debtlist">
+      {{ debt.giver.name }} owes {{ debt.receiver.name }}: {{ debt.amount }} €
+    </li>
+  </ul>
+
+</div>
+
+<div ng-if="!$ctrl.partOfMyEvents">
+  <p>You are invited!</p>
+  <button class="addItemBtn" ng-click="$ctrl.addToMyEvents()"><i class="fi-plus icon-padding"></i>Add to my Events</button>
+</div>

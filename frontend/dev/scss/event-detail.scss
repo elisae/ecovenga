@@ -1,0 +1,147 @@
+.event-detail{
+    .header-wrapper{
+        min-width: 50%;
+        justify-content: space-between;
+        display: inline-flex;
+        float: right;
+        margin-right: -5px;
+    }
+    .event-metadata{
+        margin: 0px;
+        li{
+            border-bottom: 1px solid;
+        }
+        li:last-child{
+            border: none;
+        }
+        .revoke{
+            margin-bottom: 0px;
+            margin-left: 15px;
+        }
+    }
+.event-detail-list{
+        margin-top: 75px;
+        li{
+            margin-left: -25px;
+            border-bottom: 1px solid;
+            padding: 12.5px;
+            input{
+                height: 52px;
+            }
+            .item-wrapper{
+                width: 100%;
+                display: block;
+                background-color: #f2f2f2;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .item-label{
+                min-width: 360px;
+                margin-right:20px;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+            }
+            .checkBtn{
+                margin-top: 0px;
+                border-radius: 0 7px 7px 0;
+                margin-bottom: 0;
+                height: 52px;
+            }
+            .responsible{
+                margin: 9px;
+            }
+            .item{
+                margin-left: 5px;
+                input{
+                    margin-bottom: 0;
+                    min-width: 250px;
+                    margin-left: -6px;
+                }
+            }
+            .input-wrapper{
+                margin-right: 20px;
+            }
+            .cost_label{
+                background-color: #f1f1f1;
+            }
+            .cost, .cost_label{
+                border-radius: 5px;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+            .expenses-wrapper{
+                float: left;
+                height: 48px;
+                width: 60px;
+            }
+            .expenses{
+                height: 48px;
+                width: auto;
+                padding: 10px;
+                input{
+                    width: 125px;
+                }
+            }
+            .li-wrapper{
+                display: block;
+                height: 52px;
+                margin-top: 10px;
+                overflow: hidden;
+                span{
+                    display: inline-flex;
+                }
+                .cost-input-wrapper{
+                    line-height: 66px;
+                }
+            }
+            .button{
+                padding: 15px 18px 15px 18px;
+            }
+            span{
+            }
+            .icon-stand-alone{
+                margin: 0px;
+                padding: 0px;
+            }
+            .delete{
+                margin-bottom: 20px;
+            }
+            .assigned_to_wrapper{
+                background-color: #f1f1f1;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.detail-list-header{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px 48px 20px 38px;
+    position: absolute;
+    left: 0px;
+    border: 1px solid black;
+}
+.eventNotes{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.responsible{
+    float: right;
+}
+
+#button{
+  padding-right:10px;
+  margin-right:10px
+}
+
+.debt-list{
+    margin-top: 110px !important;
+    margin-left: 15px;
+    li{
+        margin-left: -12px !important;
+    }
+}

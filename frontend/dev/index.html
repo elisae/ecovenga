@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECOVENGA</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+    <!-- TODO: unite in one .js file -->
+    <script src="js/script.min.js"></script>
+    <!-- <base href="/"> -->
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  <body ng-app="ecovenga">
+  <div class="top-menu">
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <span><a href="/#!/"><img src="./../assets/images/ecovenga_icon.png" alt="ecovenga"/><h2>ecovenga</h2></a></span>
+      </div>
+      <div class="title-bar-right">
+        <a class="title-bar-icons" href="#!events"><i class="fi-calendar icon-padding"></i></a>
+        <a class="title-bar-icons" href="/#!/expenses"><i class="fi-shopping-cart icon-padding"></i></a>
+        <a class="title-bar-icons" href="/#!/"><i class="fi-unlock icon-padding"></i></a>
+      </div>
+    </div>
+  </div>
+    <div class="page {{ pageClass }}" ng-view ></div>
+  </body>
+</html>

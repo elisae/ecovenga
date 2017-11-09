@@ -1,0 +1,50 @@
+[
+  {
+    _id: ObjectId("aaaaa9942164be0a297421bc"),
+    name: "Grillen",
+    date: "2017-06-19T18:00:00+02:00",
+    participants: [
+      ObjectId("dddddd000000111111222222"),
+      ObjectId("eeeeee000000111111222222"),
+      ObjectId("aaaaaa000000111111222222"),
+      ObjectId("bbbbbb000000111111222222")
+    ],
+    items: [
+      ObjectId("000000000000000000000000"),
+      ObjectId("000000000000000000000001"),
+      ObjectId("000000000000000000000002"),
+      ObjectId("000000000000000000000003"),
+      ObjectId("000000000000000000000004")
+    ],
+    notes: "Am Freitag Mittag wollen wir es uns mal wieder so richtig gut gehen lassen",
+    creator: ObjectId("dddddd000000111111222222")
+  },
+  {
+    _id: ObjectId("bbbbb9942164be0a297421bc"),
+    name: "Elisa's Geburtstag",
+    date: "2017-06-10T19:30:00+02:00",
+    participants: [
+      ObjectId("eeeeee000000111111222222"),
+      ObjectId("aaaaaa000000111111222222")
+    ],
+    items: [],
+    notes: "Hiiiii ihr Liiiieeeeeeben! Lade euch alle herzlich ein!",
+    creator: ObjectId("eeeeee000000111111222222")
+  },
+  {
+    _id: ObjectId("ccccc9942164be0a297421bc"),
+    name: "WG-Party",
+    date: "2017-06-04T21:00:00+02:00",
+    participants: [
+      ObjectId("eeeeee000000111111222222"),
+      ObjectId("aaaaaa000000111111222222")
+    ],
+    items: [
+      ObjectId("000000000000000000000005"),
+      ObjectId("000000000000000000000006"),
+      ObjectId("000000000000000000000007"),
+      ObjectId("000000000000000000000008")
+    ],
+    creator: ObjectId("aaaaaa000000111111222222")
+  }
+]

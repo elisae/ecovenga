@@ -1,0 +1,46 @@
+.ng-enter       { z-index: 8888; }
+.ng-leave       { z-index: 9999; }
+
+/* page specific animations ------------------------ */
+
+
+.event-list.ng-enter         { animation: slideInUp 0.5s both ease-in; }
+.event-list.ng-leave         { animation: slideOutLeft 0.5s both ease-in; }
+
+.event-detail.ng-enter        { animation: slideInUp 0.5s both ease-in; }
+.event-detail.ng-leave        { animation: slideOutLeft 0.5s both ease-in; }
+
+.event-form.ng-enter      { animation: slideInUp 0.5s both ease-in; }
+.event-form.ng-leave      { animation: slideOutLeft 0.5s both ease-in; }
+
+
+/* leaving animations ----------------------------------------- */
+@keyframes scaleDown {
+    from    { opacity: 1.0; -webkit-transform: scale(1.0); }
+    to      { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+@keyframes slideOutLeft {
+    from    { transform:translateX(0%); }
+    to      { transform: translateX(-100%); }
+}
+
+@keyframes slideOutUp {
+    from    { transform:translateY(0%); }
+    to      { transform: translateY(100%); }
+}
+
+/* entering animations --------------------------------------- */
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}

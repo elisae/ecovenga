@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Fleisch",
+    "assigned_to": ObjectId("dddddd000000111111222222"),
+    "_id": ObjectId("000000000000000000000000"),
+    "event": ObjectId("aaaaa9942164be0a297421bc"),
+    "cost": 23
+  }, {
+    "label": "Kartoffelsalat",
+    "_id": ObjectId("000000000000000000000001"),
+    "event": ObjectId("aaaaa9942164be0a297421bc"),
+    "assigned_to": ObjectId("dddddd000000111111222222"),
+    "cost": 5
+  }, {
+    "label": "Bier",
+    "assigned_to": ObjectId("dddddd000000111111222222"),
+    "_id": ObjectId("000000000000000000000002"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 14
+  }, {
+    "label": "Deko",
+    "assigned_to": ObjectId("bbbbbb000000111111222222"),
+    "_id": ObjectId("000000000000000000000003"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 10
+  }, {
+    "label": "Grillschalen",
+    "assigned_to": ObjectId("aaaaaa000000111111222222"),
+    "_id": ObjectId("000000000000000000000004"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 3
+  }, {
+    "label": "Wein",
+    "assigned_to": ObjectId("aaaaaa000000111111222222"),
+    "_id": ObjectId("000000000000000000000005"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 14
+  }, {
+    "label": "Schnitzel",
+    "assigned_to": ObjectId("eeeeee000000111111222222"),
+    "_id": ObjectId("000000000000000000000006"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 10
+  }, {
+    "label": "Bier",
+    "assigned_to": ObjectId("aaaaaa000000111111222222"),
+    "_id": ObjectId("000000000000000000000007"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 23
+  },{
+    "label": "Salat",
+    "_id": ObjectId("000000000000000000000008"),
+    "event": ObjectId("ccccc9942164be0a297421bc"),
+    "cost": 0
+  }
+]

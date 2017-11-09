@@ -1,0 +1,54 @@
+<h2 class="my-event-header">
+  <span>
+    <span>
+      My Events
+    </span>
+    <span class="search-filter-icons">
+      <i ng-click="showSearch = !showSearch" class="fi-magnifying-glass"></i>
+      <i ng-click="showSort = !showSort" class="fi-filter"></i>
+    </span>
+  </span>
+
+  <span ng-class="{'showClass' : showSearch }" class="pSearchInput">
+    <input ng-model="$ctrl.query" class="searchInput" placeholder="Search.." >
+  </span>
+
+  <select ng-class="{'showClass' : showSort }" ng-model="$ctrl.orderProp" class="orderListSelect">
+    <option value="name">Alphabetical</option>
+    <option value="date">Chronological</option>
+  </select>
+</h2>
+
+
+<div class="scroll">
+  <ul class="event-ul">
+
+    <li class="event-item" ng-repeat="event in $ctrl.events | filter: $ctrl.query | orderBy: $ctrl.orderProp">
+      <a class="event-link" ng-href="#!/events/{{event._id}}">
+
+        <div class="wrapper">
+          <span class="name">{{event.name}}</span>
+          <span class="date">{{event.date | date : "dd/MM/yyyy 'at' H:mm a"}}</span>
+          <span class="participants">
+            <i class="fi-torsos-all"></i>
+            <span ng-if="event.participants.length > 0">{{event.participants.length}}</span>
+            <span ng-if="!event.participants.length || event.participants.length == 0">0</span>
+            <span>Joined the invitation</span>
+          </span>
+        </div>
+      </a>
+
+      <div class="button-group">
+        <button ng-click="$ctrl.goToEvent(event._id)" class="button"><i class="fi-eye icon-stand-alone"></i>View</button>
+        <button ng-if="$ctrl.user == event.creator" class="button" ng-click="$ctrl.deleteEvent(event)"><i class="fi-trash icon-stand-alone"></i><span>Delete</span></button>
+        <button ng-if="$ctrl.user != event.creator" class="button" ng-click="$ctrl.deleteMeAsParticipator(event)"><i class="fi-x icon-stand-alone"></i><span>Revoke</span></button>
+        <button ng-if="$ctrl.user == event.creator" class="button" ng-click="$ctrl.editEvent(event._id)"><i class="fi-pencil icon-stand-alone"></i><span>Edit</span></button>
+      </div>
+
+    </li>
+
+  </ul>
+</div>
+<div class="buttonBottom">
+  <a class="addEventBtn" href="/#!/submit/0"><i class="fi-pencil icon-padding"></i>Create Event</a>
+</div>

@@ -1,0 +1,144 @@
+@import "settings/settings";
+@import "foundation";
+@import "animations";
+@include foundation-everything;
+@import "foundation-icons";
+@import "event-detail";
+@import "event-list";
+@import "event-form";
+@import "expenses";
+@import "login";
+
+$font-family: Open Sans, sans-serif;
+$primary-color: #FFFFFF;
+
+@font-face {
+  font-family: "foundation-icons";
+  src: url("./../assets/fonts/foundation-icons/foundation-icons.eot");
+  src: url("./../assets/fonts/foundation-icons/foundation-icons.eot?#iefix") format("embedded-opentype"),
+       url("./../assets/fonts/foundation-icons/foundation-icons.woff") format("woff"),
+       url("./../assets/fonts/foundation-icons/foundation-icons.ttf") format("truetype"),
+       url("./../assets/fonts/foundation-icons/foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+body{
+    background-color:$primary-color;
+    font-family: $font-family;
+    padding: 1rem;
+}
+
+li{
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.loginBtn, .addEventBtn, .expensesBtn, .addItemBtn{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 12px;
+    background-color: lightgrey;
+    width: 90%;
+    height: 3rem;
+    background-color:#f15a0e;
+    border: none;
+    color: white;
+    font-family: 'Helvetica';
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.buttonBottom{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    padding-bottom: 20px;
+    height: 100px;
+}
+
+.button{
+    border-radius: 5px;
+}
+
+.event-list .button{
+    margin: 5px;
+}
+
+.icon-stand-alone{
+    margin-top: -10px;
+    padding-right: 10px;
+}
+
+.icon-padding{
+    padding-right: 10px;
+}
+
+.checkBtn{
+    margin-top: -20px;
+    border-radius: 0 7px 7px 0;
+    margin-bottom: 23px;
+}
+
+.input-wrapper{
+    display: inline-flex;
+}
+
+.btn-wrapper{
+    margin-top: -25px;
+    display: flex;
+    height: 70px;
+    margin-bottom: 25px;
+    a{
+        width: 100%;
+        margin-left: -12px;
+        margin-right: 7px;
+    }
+}
+
+.top-menu{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 99999;
+    .title-bar{
+        height: 72px;
+        a{
+            color: white;
+        }
+        a:hover{
+            color: #f1f1f1;
+        }
+        .title-bar-icons{
+            font-size: 32px;
+            right: 15px;
+            position: relative;
+            margin-right: 7px;
+            top: 3px;
+            cursor: pointer;
+        }
+        h2{
+            line-height: 55px;
+            display: inline-block;
+        }
+        img{
+            height: 33px;
+            margin: 7px 16px 15px 8px;
+        }
+    }
+}
+
+.page{
+    margin-top: 72px;
+}

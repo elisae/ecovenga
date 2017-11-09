@@ -1,0 +1,32 @@
+[
+  {
+    "_id": ObjectId("aaaaaa000000111111222222"),
+    "name": "Aaron",
+    "username": "aaron_x",
+    "password": "test",
+    "events": [
+      ObjectId("ccccc9942164be0a297421bc")
+    ]
+  }, {
+    "_id": ObjectId("bbbbbb000000111111222222"),
+    "name": "Benni",
+    "username": "benben",
+    "password": "test",
+    "events": []
+  }, {
+    "_id": ObjectId("eeeeee000000111111222222"),
+    "name": "Elisa",
+    "username": "elisae",
+    "password": "test",
+    "events": [
+      ObjectId("bbbbb9942164be0a297421bc"),
+      ObjectId("ccccc9942164be0a297421bc")
+    ]
+  },{
+    "_id": ObjectId("dddddd000000111111222222"),
+    "name": "Dome",
+    "username": "d123",
+    "password": "test",
+    "events": [ObjectId("aaaaa9942164be0a297421bc")]
+  }
+]

@@ -1,0 +1,13 @@
+  <div>
+    <div class="icon">
+    <img src="./../assets/images/ecovenga_icon.png" alt="ecovenga"/>
+    </div>
+    <p class="loginText">
+      Salut! Please login to continue...
+    </p>
+    <form ng-submit="$ctrl.login()">
+      <label><input type="text" class="inputField" ng-model="$ctrl.username" required placeholder="Username "/></label><br />
+      <label><input type="password" class="inputField" ng-model="$ctrl.password" required placeholder="Password "/></label><br />
+      <input type="submit" id="submit" value="Submit" class="loginBtn"/>
+    </form>
+  </div>

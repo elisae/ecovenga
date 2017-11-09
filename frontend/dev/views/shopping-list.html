@@ -1,0 +1,41 @@
+<div class="event-detail2">
+<h2 class="header">My Itemlist</h2>
+<ul ng-repeat="event in events">
+<span ng-if="event.items.length > 0">
+<h3 class="eventName">Event "{{event.name}}"</h3>
+<ul class="event-detail-list">
+  <li ng-repeat="item in event.items | usersItems:usersId" class="item-wrapper-responsive">
+
+    <span ng-if="item.label" class="itemlabel">
+      <span class="item">{{ item.label }}</span>
+    </span>
+    <span ng-if="!item.label" class="input-wrapper">
+      <span ng-class="{class1: item-responsive, class2: item}"><input type="text" ng-model="$ctrl.new_label" placeholder="Label..."/></span>
+    </span>
+
+    <div class="li-wrapper">
+
+      <span ng-if="item.cost">
+        <span class="cost_label">
+          <!-- only event creator or item-responsible person can edit cost -->
+          <button class="button delete" ng-click="$ctrl.deleteCost(item._id)"><i class="fi-trash icon-stand-alone"></i></button>
+        <span class="expenses">{{ item.cost }} €</span>
+        </span>
+      </span>
+
+      <!-- item has no cost to display -->
+      <span ng-if="!item.cost" class="expenses-input cost">
+        <!-- only event-creator or, if item is assigned, item-responsible person can edit cost -->
+
+          <span ng-class="expenses-wrapper"><input type="text" class="smalltext-responsive" ng-model="$ctrl.new_cost" placeholder="Cost..."/>
+          <button class="button checkBtn" ng-click="$ctrl.addCost(item)"><i class="fi-check icon-stand-alone"></i></button></span>
+
+      </span>
+
+    </div>
+
+    </li>
+</ul>
+</span>
+</ul>
+</div>

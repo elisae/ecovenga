@@ -1,0 +1,5 @@
+node_modules
+public
+**/.DS_Store
+test/mongodb/logs/*
+test/mongodb/data/*
