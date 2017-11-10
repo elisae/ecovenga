@@ -1,3 +1,52 @@
+Introduction
+------------
+This is a university project I'm a *little* more confident showing here, even though it's still a toy project, and incomplete at that. It taught me quite a few things and considering the amount of time spent on this, the outcome is totally fine.
+
+#### The Team
+Random set of four third- to seventh-semester students, all of us noobs at most of the technologies used for this project, and only two really contributing.
+
+#### The Task
+"Agree on a set of frameworks/technologies from the web ecosphere that are new for you. Pick a random project idea, implement it using these, and learn something."
+
+#### The Stack
+We agreed on the classic MEAN stack:
+* Database: *MongoDB*
+* Server: *Node*, *Express*
+* Frontend: *Angular*, *Gulp*, *Sass*, *Foundation*
+* Tests: *Mocha*, *Chai*
+* Deployment: *Docker Compose*
+* Build: *Gulp*
+
+#### The Features
+You cannot even create an account yet... But assuming you had one (entered into the database by the initial seeding), then you can log in with your *totally* encrypted password, receive a *totally* secure auth-token, and:
+* Create/edit/delete events, invite/disinvite friends, participate in friends' events
+* List items that should be brought to the event, take/untake responsibility for items, assign costs to them
+* View assigned items of all upcoming events (shopping-list-like)
+* Sum up all costs and divide equally between all event participants, retrieve overview of who-owes-whom
+
+#### The Architecture
+The most interesting part, for me, is that we used Docker with one container each for the database, the app server, and the initial data seed. The rest is pretty basic, I guess (find out by clicking through the repo.)
+
+#### What I learned
+Once again, I was responsible for the backend: development environment, database, API, and all that jazz – alongside with a mini test suite. I also set up an initial scaffold with the basic views and Angular ~~components~~ modules, controllers, whatever, needed for our project. And last but not least I implemented the algorithm to calculate all mutual debts.  
+So that's basically my take-away: First experience with **Docker Compose**, **JavaScript testing** and **Angular**, further experience with **NoSQL**, **RESTful API definition** (and **protection**) with Express, and a "revival" of those algorithmic-problem-solving brain cells.
+
+Grade was B+. If you have any questions, let me know.  
+<br>
+**Disclaimer**  
+From here on, everything is as it was when we handed the project in (June '17), including some structural no-goes (in my opinion) that I'm lacking the motivation to fix right now. It may also contain some errors I'm not aware of.
+
+**P.S.:**  
+Oh and by the way, the name is partly random, partly cool:
+* `eco`: random buzzword as the original team name, when we didn't have a project idea yet
+* `venga`: *"¡Venga, venga!"* (Spanish for *"Come on!"*) is something I like to shout out to my mates when setting out for something (e.g. a new web project)
+* `co-`: Latin prefix for *"together"*, *"mutually"*
+* `e-`: English prefix for anything electronic
+
+`ecovenga`: *"Come together electronically"* ... or something like that :D
+
+---
+
 Ecovenga
 ========
 ### App description
